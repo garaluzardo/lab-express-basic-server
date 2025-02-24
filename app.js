@@ -21,10 +21,16 @@ app.use(morgan("dev"));
 
 // ROUTES
 // Start defining your routes here:
+
     // GET Home page
-    app.get("/", (req, res) => {
-        res.sendFile(__dirname + "/views/home.html");
-    });
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/views/home.html");
+});
+
+    // GET Blog page
+app.get("/blog", (req, res) => {
+    res.sendFile(__dirname + "/views/blog.html");
+});
 
 // START THE SERVER
 // Make your Express server listen on port 5005:
