@@ -2,6 +2,7 @@
 // Here you should import the required packages for your Express app: `express` and `morgan`
 const express = require("express");
 const morgan = require("morgan");
+const projects = require("./data/projects.json");
 
 
 // CREATE EXPRESS APP
@@ -30,6 +31,11 @@ app.get("/", (req, res) => {
     // GET Blog page
 app.get("/blog", (req, res) => {
     res.sendFile(__dirname + "/views/blog.html");
+});
+
+    // GET API projects
+app.get("/api/projects", (req, res) => {
+    res.json(projects);
 });
 
 // START THE SERVER
